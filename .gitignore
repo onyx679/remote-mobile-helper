@@ -35,3 +35,9 @@ det-word-judge-results.verify.csv
 
 # Optional large calibration/question cache
 det-read-and-select-questions.json
+
+# Runtime state files
+now-preview-rot180.png
+now-preview.png
+screen-word-region.json
+fix-codex-voice.cmd
