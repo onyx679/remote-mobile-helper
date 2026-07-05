@@ -1,0 +1,35 @@
+# Core outputs and cache (do not commit/push)
+__pycache__/
+camera-inbox/
+camera-rotated/
+ai-outbox/
+
+# Captured/diagnostic images
+debug-*.png
+latest-*.png
+current-*.png
+preview-*.png
+state-*.png
+bench-*.png
+bench-*.jpg
+calibrate-*.png
+ocr-test-*.png
+recovery-*.png
+transfer-test-*.jpg
+
+# Runtime artifacts
+*.log
+*.mkv
+*.part
+*.pyc
+*.pyo
+*.egg-info/
+
+# Data output
+det-word-judge-errors.csv
+det-word-judge-results.csv
+det-word-judge-errors.verify.csv
+det-word-judge-results.verify.csv
+
+# Optional large calibration/question cache
+det-read-and-select-questions.json
