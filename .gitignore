@@ -26,6 +26,8 @@ transfer-test-*.jpg
 *.egg-info/
 
 # Data output
+latest-*.txt
+latest-*.json
 det-word-judge-errors.csv
 det-word-judge-results.csv
 det-word-judge-errors.verify.csv
