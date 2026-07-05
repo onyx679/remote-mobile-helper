@@ -1,7 +1,7 @@
 param(
     [string]$Serial = "adb-2252475e-baGT88._adb-tls-connect._tcp",
     [string]$Crop = "0.0,0.0,1.0,1.0",
-    [string]$ScreenRegion = "",
+    [string]$ScreenRegion = "desktop",
     [double]$PollSeconds = 0.15,
     [switch]$CopyAnswer
 )

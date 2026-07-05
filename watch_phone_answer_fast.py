@@ -152,12 +152,19 @@ def capture_desktop_region(region: tuple[int, int, int, int]):
     return cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
 
 
+def capture_desktop_full():
+    image = ImageGrab.grab(all_screens=True)
+    return cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
+
+
 def parse_screen_region_argument(value: str) -> tuple[str, tuple[int, int, int, int] | None]:
     value = value.strip()
     if not value:
         return "adb", None
     if value.lower() == "scrcpy":
         return "scrcpy", None
+    if value.lower() == "desktop":
+        return "desktop", None
     return "desktop", tuple(int(part.strip()) for part in value.split(","))
 
 
@@ -355,6 +362,8 @@ def capture_scrcpy_window(title_substring: str = "Android-Remote-WiFi"):
 
 def capture_preview_image(adb: str, serial: str, capture_source: tuple[str, tuple[int, int, int, int] | None]):
     source, region = capture_source
+    if source == "desktop" and region is None:
+        return capture_desktop_full()
     if source == "desktop" and region is not None:
         return capture_desktop_region(region)
     if source == "scrcpy":
