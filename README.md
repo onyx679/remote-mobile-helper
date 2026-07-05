@@ -199,16 +199,25 @@ This creates a timestamped zip under `portable-release\`.
 On the new machine:
 
 ```powershell
-cd <解压目录>
+cd "C:\path\to\project"
 .\setup-new-pc.ps1
 python -m pip install -r requirements.txt
 .\check-devices.ps1
 ```
 
+Or clone from GitHub:
+
+```powershell
+git clone https://github.com/onyx679/remote-mobile-helper.git
+cd remote-mobile-helper
+.\setup-new-pc.ps1
+python -m pip install -r requirements.txt
+```
+
 Then bind to your new phone serial:
 
 ```powershell
-.\start-scrcpy-small.ps1 -Serial <新serial>
+.\start-scrcpy-small.ps1 -Serial <serial>
 ```
 
 If your serial is unstable, pass `-Serial` each time for:
@@ -220,7 +229,7 @@ If your serial is unstable, pass `-Serial` each time for:
 Recommended daily run:
 
 ```powershell
-.\start-scrcpy-small.ps1 -Serial <新serial>
+.\start-scrcpy-small.ps1 -Serial <serial>
 start-word-answer.cmd
 start-photo-clipboard.cmd
 ```
